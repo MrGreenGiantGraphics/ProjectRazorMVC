@@ -1,0 +1,41 @@
+﻿@model ProjectRazorMVC.Models.TodoIndexVM
+
+<h1>@ViewBag.TodoGreeting</h1>
+@*<div>
+
+    @using (Html.BeginForm())
+    {
+        <div>
+            @Html.LabelFor(Model => Model.Text)
+            @Html.TextBoxFor(Model => Model.Text)
+        </div>
+
+        <div>
+
+            <input type="submit" value="Create Todo" />
+        </div>
+    }
+
+</div>*@
+
+<div>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Chores</th>
+            <th>Was the task complete?</th>
+            <th>Date Completed</th>
+        </tr>
+
+        @foreach (var ch in Model.MyChores)
+        { 
+            <tr>
+                <td>@ch.Id</td>
+                <td>@ch.Task</td>
+                <td>@ch.IsCompleted</td>
+                <td>@ch.Datecreated</td>
+            </tr>        
+        
+        }
+    </table>
+</div>
